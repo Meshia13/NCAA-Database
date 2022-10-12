@@ -17,7 +17,7 @@ The project includes using several sets of static data files. The data was clean
 <img
   src = "https://user-images.githubusercontent.com/65563803/195466967-41115b56-4584-4eec-acbf-d9bf4c287185.jpg"
   alt = "Schema"
-  style = "display: inline-block; margin: 0, max-width: 300px">
+  style = "display: inline-block; margin: 0, max-width: 100px">
 
 ![schema](https://user-images.githubusercontent.com/65563803/195466967-41115b56-4584-4eec-acbf-d9bf4c287185.jpg)
 
