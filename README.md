@@ -4,18 +4,15 @@
 The datasets include: 
 
 [Minimum Wage](https://www.kaggle.com/datasets/lislejoem/us-minimum-wage-by-state-from-1968-to-2017)
-
 [Equity in Athletics](https://ope.ed.gov/athletics/#/)
-
 [Custom Report Data](https://knightnewhousedata.org/reports) 
-
 [Cost of Attendance](https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx?goToReportId=1)
 
 
-The project includes using several sets of static data files. The data was cleaned using Python. Analysis was performed on datasets and irrelevant data and duplicates were removed. Conversion of data types, number formatting, handling missing information, capitalization and fixing errors were performed. Column names had standardized formatting so they were meaningful across datasets. Since the datasets were unstructured, developing consistency amongst the data was important. 
+The project includes using several sets of static data files. The data was cleaned using Python. Analysis was performed on datasets and irrelevant data and duplicates were removed. Conversion of data types, number formatting, handling missing information, capitalization and fixing errors were performed. Column names had standardized formatting so they were meaningful across datasets. Since the datasets were unstructured, developing consistency amongst the data was important. After the datasets were transformed, a schema was produced and database was created based off of the schema
 
 
-
+![schema](https://user-images.githubusercontent.com/65563803/195466853-6008712d-b630-404f-895d-e04dee640b22.jpg)
 
 
 ## Things I've Learned
