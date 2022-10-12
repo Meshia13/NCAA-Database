@@ -3,14 +3,14 @@ Analysis and Engineering using SQL
 
 ## Things I've Learned
 
-*Defining data structures using Data Definition Language (DDL) 
+* Defining data structures using Data Definition Language (DDL) 
 
-*Create, Drop, Alter and Rename database, tables and attributes 
+* Create, Drop, Alter and Rename database, tables and attributes 
 
-*Defined constraints in database
+* Defined constraints in database
 
-*Manipulated data using Data Manipulation Language (DML)
+* Manipulated data using Data Manipulation Language (DML)
 
-*Imported csv file into Microsoft SQL Server
+* Imported csv file into Microsoft SQL Server
 
-*Inserted values from csv file into created tables
+* Inserted values from csv file into created tables
