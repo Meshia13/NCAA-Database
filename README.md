@@ -25,6 +25,8 @@ Fact table and dimension table was created from Star Schema. The fact table was 
 
 * Defined constraints in database
 
+* Concat() was performed to combine columns to create new columns
+
 * Manipulated data using Data Manipulation Language (DML)
 
 * Imported csv file into Microsoft SQL Server
