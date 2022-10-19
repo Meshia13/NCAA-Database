@@ -2,7 +2,8 @@
 --
 --This database features the creation of 5 tables. Each table is created based upon an
 --csv file that is imported into Microsoft SQL Server Management Studio. 
-
+ 
+ ----Creation of fact table and dimension table from star schema
 
 --Dropping database NCAA in case database is already created
 --drop database NCAA
@@ -184,3 +185,76 @@ FROM totalCOA;
 
 SELECT * from total_coa;
 ---------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+
+-----CREATING A FACT TABLE AND DIMENSION TABLE FOR STAR SCHEMA-------------------
+----
+
+-----FACT TABLE------
+DROP TABLE fact_table;
+
+CREATE TABLE fact_table (
+  unique_id integer NOT NULL IDENTITY(1,1),
+  ipeds_id integer,
+  year integer,
+  session character varying(256),
+  state character varying(256),
+  total_expenses numeric(18,2), 
+  total_revenues numeric(18,2), 
+  total_student_athletes numeric(18,2),
+  coa_in_state_off_campus_family numeric(18,2),  
+  coa_in_state_off_campus_single numeric(18,2),
+  coa_in_state_on_campus numeric(18,2),
+  coa_out_of_state_off_campus_family numeric(18,2),
+  coa_out_of_state_off_campus_single numeric(18,2),
+  coa_out_of_state_on_campus numeric(18,2),
+  CONSTRAINT fact_table_pkey PRIMARY KEY(unique_id));
+   
+ INSERT INTO fact_table(
+  ipeds_id, year, session,state,total_expenses, total_revenues, total_student_athletes, coa_in_state_off_campus_family,  
+  coa_in_state_off_campus_single, coa_in_state_on_campus, coa_out_of_state_off_campus_family, coa_out_of_state_off_campus_single,
+  coa_out_of_state_on_campus)
+
+SELECT 
+total_coa.ipeds_id,
+total_coa.year,
+  session,
+  total_coa.state,
+  total_expenses,
+  total_revenues,
+ equity_in_athletics.total_student_athletes, 
+  in_state_off_campus_family AS coa_in_state_off_campus_family,  
+  in_state_off_campus_single AS coa_in_state_off_campus_single,
+  in_state_on_campus AS coa_in_state_on_campus,
+  out_of_state_off_campus_family AS coa_out_of_state_off_campus_family,
+  out_of_state_off_campus_single AS coa_out_of_state_off_campus_single, 
+  out_of_state_on_campus AS coa_out_of_state_on_campus
+  FROM equity_in_athletics 
+  JOIN total_coa ON 
+ equity_in_athletics.ipedsId_year = total_coa.ipedsId_year
+  JOIN collegiate_athletics_financial_info ON 
+ equity_in_athletics.ipedsId_year = collegiate_athletics_financial_info.ipedsId_year;
+
+----ADDING A COLUMN TO THE TABLE BY USING CONCAT TO CREATE THE NEW COLUMN----
+ALTER TABLE fact_table
+ADD  state_year character varying(256);
+ 
+UPDATE fact_table
+ SET state_year = CONCAT(state, year);
+ 
+SELECT * from fact_table
+ 
+ ------------DIMENSION TABLE
+
+drop table dim_schools_sessions;
+
+ CREATE TABLE dim_schools_sessions(
+ year integer,
+ session VARCHAR(100) NOT NULL);
+
+INSERT INTO dim_schools_sessions(year,session)
+ SELECT year,session
+ FROM totalCOA;
+
+SELECT * FROM dim_schools_sessions;
