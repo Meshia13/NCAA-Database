@@ -12,9 +12,9 @@ The datasets include:
 [Cost of Attendance](https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx?goToReportId=1)
 
 
-The project includes using several sets of static data files. The data was cleaned using Python. Analysis was performed on datasets and irrelevant data and duplicates were removed. Conversion of data types, number formatting, handling missing information, capitalization and fixing errors were performed. Column names had standardized formatting so they were meaningful across datasets. Since the datasets were unstructured, developing consistency amongst the data was important. After the datasets were transformed, a schema was produced and database was created based off of the schema
+The project includes using several sets of static data files. The data was cleaned using Python. Analysis was performed on datasets and irrelevant data and duplicates were removed. Conversion of data types, number formatting, handling missing information, capitalization and fixing errors were performed. Column names had standardized formatting so they were meaningful across datasets. Since the datasets were unstructured, developing consistency amongst the data was important. After the datasets were transformed, a schema was produced and database was created based off of the schema. Fact table and dimension table was created from Star Schema. The fact table was created by joining multiple tables within the database. 
 
-Fact table and dimension table was created from Star Schema. The fact table was created by joining multiple tables within the database. 
+One Jupyter file was attached to this project to demonstrate how I transformed the raw dataset into a clean dataset. Upon analyzing the datasets, removal of unwanted columns, number formatting so math could be done reliably, column names had standardized formatting so they were meaningful across datasets. 
 
 
 ## Things I've Learned
