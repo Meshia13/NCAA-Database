@@ -14,6 +14,8 @@ The datasets include:
 
 The project includes using several sets of static data files. The data was cleaned using Python. Analysis was performed on datasets and irrelevant data and duplicates were removed. Conversion of data types, number formatting, handling missing information, capitalization and fixing errors were performed. Column names had standardized formatting so they were meaningful across datasets. Since the datasets were unstructured, developing consistency amongst the data was important. After the datasets were transformed, a schema was produced and database was created based off of the schema
 
+Fact table and dimension table was created from Star Schema. The fact table was created by joining multiple tables within the database. 
+
 
 ## Things I've Learned
 
